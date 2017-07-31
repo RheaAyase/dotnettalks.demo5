@@ -8,7 +8,7 @@ This demo is built on top of [Tom's DBus library](https://github.com/tmds/Tmds.D
 
 * [redhatloves.net](http://fedoraloves.net)
 * [fedoraloves.net](http://fedoraloves.net)
-* [Presentation slides]() //todo
+* [Presentation slides](http://redhat.slides.com/rjanekov/netcore-4?token=lS0GKgaA)
 
 #### Steps:
 
