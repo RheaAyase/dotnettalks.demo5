@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Threading.Tasks;
 using Tmds.DBus;
 using UPower.DBus;
@@ -7,29 +7,14 @@ namespace demo4
 {
     class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
-            Console.WriteLine("");
-            PrintNewDevices().Wait();
-        }
+            Console.WriteLine("Waiting for device. Press Ctrl-C to stop.");
 
-        static async Task PrintNewDevices()
-        {
-            using( var connection = new Connection(Address.System) )
-            {
-                await connection.ConnectAsync();
-                IUPower power = connection.CreateProxy<IUPower>("org.freedesktop.UPower", "/org/freedesktop/UPower");
+            IUPower power = Connection.System.CreateProxy<IUPower>("org.freedesktop.UPower", "/org/freedesktop/UPower");
+            await power.WatchDeviceAddedAsync(path => Console.WriteLine($"Device connected: {path}"));
 
-                await power.WatchDeviceAddedAsync(devicePath => {
-                    Console.WriteLine("Device connected: "+ devicePath.ToString());
-                });
-
-                await Task.Run(() => {
-                    Console.WriteLine("Waiting for device... (Press any key to close the application.)");
-                    Console.ReadKey();
-                    Console.WriteLine();
-                });
-            }
+            await Task.Delay(-1);
         }
     }
 }
