@@ -1,5 +1,5 @@
 
-## C# on Linux - demo4
+## C# on Linux - demo5
 
 This repository contains .NET Core demo that I use during some of my talks. Please note that this code contains hacks and should not be taken seriously - it serves only as demonstration of interacting with the Linux system.  
 This demo is built on top of [Tom's DBus library](https://github.com/tmds/Tmds.DBus).
@@ -8,7 +8,7 @@ This demo is built on top of [Tom's DBus library](https://github.com/tmds/Tmds.D
 
 * [redhatloves.net](http://fedoraloves.net)
 * [fedoraloves.net](http://fedoraloves.net)
-* [Presentation slides](http://redhat.slides.com/rjanekov/netcore-4?token=lS0GKgaA)
+* [Presentation slides](http://redhat.slides.com/rjanekov/netcore-5?token=VGY5n8wo)
 
 #### Steps:
 
@@ -19,10 +19,10 @@ This demo is built on top of [Tom's DBus library](https://github.com/tmds/Tmds.D
     1. Add a new packageSource:  
     `<add key="tmds" value="https://www.myget.org/F/tmds/api/v3/index.json" protocolVersion="3" />`
 1. Create a new console application:  
-    `$ mkdir demo4 && cd demo4`  
+    `$ mkdir demo5 && cd demo5`  
     `$ dotnet new console`  
 1. Edit the project file to include `tmds.DBus`  
-    [`$ vim demo4.csproj`](https://github.com/RheaAyase/dotnettalks.demo4/blob/master/demo4.csproj)
+    [`$ vim demo5.csproj`](https://github.com/RheaAyase/dotnettalks.demo5/blob/master/demo5.csproj)
 1. Run `$ dotnet restore` to get the NuGet packages we need.
 1. List DBus services and find objects for org.freedesktop.UPower:  
     `$ dotnet dbus list --bus system services | grep -i power`  
@@ -31,6 +31,6 @@ This demo is built on top of [Tom's DBus library](https://github.com/tmds/Tmds.D
     -`/org/freedesktop/UPower : org.freedesktop.UPower`
 1. Generate C# interfaces for the UPower service:  
     `$ dotnet dbus codegen --bus system --service org.freedesktop.UPower`  
-    -`Generated: /home/rjanek/dev/dotnettalks/demo4/UPower.DBus.cs`
-1. [Play with it](https://github.com/RheaAyase/dotnettalks.demo4/blob/master/Program.cs) =)
+    -`Generated: /home/rjanek/dev/dotnettalks/demo5/UPower.DBus.cs`
+1. [Play with it](https://github.com/RheaAyase/dotnettalks.demo5/blob/master/Program.cs) =)
     
