@@ -9,6 +9,7 @@ This demo is built on top of [Tom's DBus library](https://github.com/tmds/Tmds.D
 * [redhatloves.net](http://fedoraloves.net)
 * [fedoraloves.net](http://fedoraloves.net)
 * [Presentation slides](http://redhat.slides.com/rjanekov/netcore-5?token=VGY5n8wo)
+* [recording](https://www.youtube.com/watch?v=lY6stR3TKxo)
 
 #### Steps:
 
